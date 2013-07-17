@@ -5,5 +5,5 @@ var generator = require("../generator/generator");
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' , data: generator.generate() });
+  res.render('index', { data: generator.generate() });
 };

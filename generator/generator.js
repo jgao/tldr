@@ -30,6 +30,7 @@ var generate = function(){
   	var words = sentences[i].split(" "); // split just by " " for now
   	sentenceScores[i] = 0;
     if(sentences[i].indexOf("\"") < 0){
+      if(sentences[i].indexOf("\n") >= 0) sentences[i] = sentences[i].split("\n").pop(); // removes titles
       for(var j=0;j<words.length;j++){
   		sentenceScores[i] += freq.get(words[j].toLowerCase());
   	  }
@@ -39,25 +40,19 @@ var generate = function(){
 
   var sortedScores = sentenceScores.slice().sort(function(a, b){
   		return b-a;
-  	});
-  console.log(sortedScores);
+  });
 
   var conciseness = 0.1;
   var threashold = sortedScores[Math.floor(sentenceScores.length*conciseness)-1];
 
+  var summary = "";
   for(var i=0;i<sentences.length;i++){
   	if(sentenceScores[i] >= threashold){
-  		console.log(sentences[i]);
+  		summary += sentences[i] + ". ";
   	}
   }
 
-
-
-  freq.forEach(function(value, key){
-  	if(value >= 5) console.log(key + " : " + value);
-  });
-
-  return 0;
+  return summary;
 }
 
 exports.generate = generate;
