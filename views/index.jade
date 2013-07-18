@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1 Welcome to tl;dr
-  p #{data}
+  h3 single article reduction
+  p #{single}
+  p conciseness index: #{singleConcise}
+  p sentences from article: #{singleCount}/#{singleTotal}
+  hr
+  h3 multiple article merge and reduction
+  p #{multiple}
+  p conciseness index: #{multipleConcise}
+  p sentences from article 1: #{multipleCount1}/#{multipleTotal1}
+  p sentences from article 2: #{multipleCount2}/#{multipleTotal2}

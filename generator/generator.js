@@ -6,12 +6,100 @@ var commonWords = ["the", "be", "to", "of", "and", "a", "in", "that", "have", "i
 				   "is", "are", "", "was", "--", "were"];
 
 
-var generate = function(){
-  var article = fs.readFileSync('data/article', 'utf8');
+var concisenessMultiple = 0.025;
+var concisenessSingle = 0.05;
 
-  sentences = article.split("."); // split just by "." for now
+var generateMultiple = function(){
+  var article1 = fs.readFileSync("data/article", "utf8");
+  var article2 = fs.readFileSync("data/article2", "utf8");
+
+  var sentences1 = article1.split(".");
+  var sentences2 = article2.split(".");
 
   var freq = new HashMap();
+
+  for(var i=0;i<sentences1.length;i++){
+  	var words = sentences1[i].split(" "); // split just by " " for now
+  	for(var j=0;j<words.length;j++){
+  		var count = freq.get(words[j].toLowerCase());
+  		count = count ? count+1 : 1;
+  		freq.set(words[j].toLowerCase(), count);
+  	}
+  }
+  for(var i=0;i<sentences2.length;i++){
+  	var words = sentences2[i].split(" "); // split just by " " for now
+  	for(var j=0;j<words.length;j++){
+  		var count = freq.get(words[j].toLowerCase());
+  		count = count ? count+1 : 1;
+  		freq.set(words[j].toLowerCase(), count);
+  	}
+  }
+
+  for(var i=0;i<commonWords.length;i++){
+  	freq.set(commonWords[i].toLowerCase(), 2);
+  }
+
+  var sentenceScores1 = [];
+  var sentenceScores2 = [];
+
+  for(var i=0;i<sentences1.length;i++){
+  	var words = sentences1[i].split(" "); // split just by " " for now
+  	sentenceScores1[i] = 0;
+    if(sentences1[i].indexOf("\"") < 0){
+      if(sentences1[i].indexOf("\n") >= 0) sentences1[i] = sentences1[i].split("\n").pop(); // removes titles
+      for(var j=0;j<words.length;j++){
+  		sentenceScores1[i] += freq.get(words[j].toLowerCase());
+  	  }
+  	  sentenceScores1[i] = sentenceScores1[i]/words.length;
+    }
+  }
+  for(var i=0;i<sentences2.length;i++){
+  	var words = sentences2[i].split(" "); // split just by " " for now
+  	sentenceScores2[i] = 0;
+    if(sentences2[i].indexOf("\"") < 0){
+      if(sentences2[i].indexOf("\n") >= 0) sentences2[i] = sentences2[i].split("\n").pop(); // removes titles
+      for(var j=0;j<words.length;j++){
+  		sentenceScores2[i] += freq.get(words[j].toLowerCase());
+  	  }
+  	  sentenceScores2[i] = sentenceScores2[i]/words.length;
+    }
+  }
+
+  var sortedScores = sentenceScores1.slice().concat(sentenceScores2.slice()).sort(function(a, b){
+  		return b-a;
+  });
+
+  var threashold = sortedScores[Math.floor((sentenceScores1.length+sentenceScores2.length)*concisenessMultiple)-1];
+
+  var count1 = 0;
+  var count2 = 0;
+
+  var summary = "";
+  for(var i=0;i<Math.max(sentences1.length, sentences2.length);i++){
+  	if(i < sentences1.length){
+      if(sentenceScores1[i] >= threashold){
+    	summary += sentences1[i] + ". ";
+    	count1++;
+  	  }
+  	}
+    if(i < sentences2.length){
+      if(sentenceScores2[i] >= threashold){
+    	summary += sentences2[i] + ". ";
+    	count2++;
+  	  }
+  	}
+  }
+
+  return [ summary, count1, count2, concisenessMultiple, sentences1.length, sentences2.length ];
+}
+
+var generate = function(){
+  var article = fs.readFileSync("data/article", "utf8");
+
+  var sentences = article.split("."); // split just by "." for now
+
+  var freq = new HashMap();
+
   for(var i=0;i<sentences.length;i++){
   	var words = sentences[i].split(" "); // split just by " " for now
   	for(var j=0;j<words.length;j++){
@@ -42,17 +130,20 @@ var generate = function(){
   		return b-a;
   });
 
-  var conciseness = 0.1;
-  var threashold = sortedScores[Math.floor(sentenceScores.length*conciseness)-1];
+  var threashold = sortedScores[Math.floor(sentenceScores.length*concisenessSingle)-1];
+
+  var count = 0;
 
   var summary = "";
   for(var i=0;i<sentences.length;i++){
   	if(sentenceScores[i] >= threashold){
   		summary += sentences[i] + ". ";
+  		count++;
   	}
   }
 
-  return summary;
+  return [ summary, count, concisenessSingle, sentences.length ];
 }
 
 exports.generate = generate;
+exports.generateMultiple = generateMultiple;
