@@ -32,7 +32,7 @@
 
 
 
-  <div class="modal bs-docs-sidebar">
+  <div class="bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav">
       <li><a href="#signup">Sign Up</a></li>
       <li><a href="#story">Story</a></li>
@@ -52,12 +52,13 @@
               <div class="modal-header">
                 <h3>News. Neutral. Concise. Sign Up.</h3>
               </div>
-              <div class="modal-body" data-toggle="buttons-radio">
+              <div id="topemail" class="modal-body" data-toggle="buttons-radio">
                 <form class="form-inline">
-                  <input type="text" class="input" placeholder="Email">
-                  <button type="submit" class="btn btn-warning"><a href="#story">Sign up</a></button>
+                  <input id="topemailinput" type="text" class="input" placeholder="Email">
+                  <button id="topemailbutton" type="submit" class="btn btn-warning"><a href="#story">Sign up</a></button>
                 </form>
               </div>
+              <div id="topemaildone">Thank you for your interest.</div>
             </div>
         </section>
       </div>
@@ -88,10 +89,10 @@
                 <h3>Story</h3>
               </div>
               <div class="modal-body" data-toggle="buttons-radio">
-                <button type="button" class="btn btn-primary">Kate's Baby</button>
-                <button type="button" class="btn btn-primary">Train Disaster</button>
-                <button type="button" class="btn btn-primary">Weiner Scandal</button>
-                <button type="button" class="btn btn-primary">Earthquake in Gansu</button>
+                <button id="royalbaby" type="button" class="btn btn-primary">Kate's Baby</button>
+                <button id="trainexplosion" type="button" class="btn btn-primary">Train Disaster</button>
+                <button id="weiner" type="button" class="btn btn-primary">Weiner Scandal</button>
+                <button id="chineseearthquake" type="button" class="btn btn-primary">Earthquake in Gansu</button>
               </div>
               <div class="modal-footer">
                 <a href="#source" class="btn btn-warning">Done</a> 

@@ -9,6 +9,8 @@
 
     var $window = $(window)
 
+    var story = "none";
+
     // Disable certain links in docs
     $('section [href^=#]').click(function (e) {
       e.preventDefault()
@@ -93,6 +95,47 @@
       e.preventDefault()
       inputsVariables.val('')
     })
+
+    $("#topemaildone").hide();
+
+    $('#topemailbutton').on('click', function(e){
+      $("#topemail").hide();
+      $("#topemaildone").show();
+      var useremail = $("#topemailinput").val();
+      $.ajax({
+        url: "/email",
+        type: "GET",
+        dataType: "json",
+        data: {
+          email: useremail
+        }, 
+        contentType: "application/json",
+        cache: false,
+        timeout: 5000,
+        complete: function() {
+        },
+
+        success: function(data) {
+       },
+
+        error: function() {
+          console.log('process error');
+        },
+      });
+    });
+
+    $('#royalbaby').on('click', function(e){
+      story = "royalbaby";
+    });
+    $('#trainexplosion').on('click', function(e){
+      story = "trainexplosion";
+    });
+    $('#weiner').on('click', function(e){
+      story = "weiner";
+    });
+    $('#chineseearthquake').on('click', function(e){
+      story = "chineseearthquake";
+    });
 
     // request built javascript
     $('.download-btn .btn').on('click', function () {
