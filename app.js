@@ -5,6 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
+  , summarizer = require('./routes/summarizer')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
@@ -28,6 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 app.use('/', express.static(path.join(__dirname, '../public')));
+app.get('/summary', summarizer.summarize);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
