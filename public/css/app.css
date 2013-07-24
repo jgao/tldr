@@ -9,7 +9,7 @@ body {
   width: 100%;
   height: 380px;
   padding: 20px 0;
-  background: url('../img/news.jpg') no-repeat center center;
+  background: url('../img/newspaper.jpg') no-repeat center center;
   background-size: cover; 
 
 }
@@ -24,14 +24,32 @@ body {
 
 }
 
+#funnel {
+  display: block;
+  width: 100%;
+  height: 380px;
+  padding: 20px 0;
+  background: url('../img/funnel.png') no-repeat center center;
+  background-size: cover; 
+
+}
+
+#select .modal,
+#compile .modal, 
+#funnel .modal {
+  height: 200px;
+}
+
+
 
 /* Sidenav for Docs
 -------------------------------------------------- */
 
 .bs-docs-sidenav {
-  width: 228px;
+  width: 100px;
   margin: 30px 0 0;
   padding: 0;
+  right: 50px;
   background-color: #fff;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
@@ -90,6 +108,5 @@ body {
 }
 .bs-docs-sidenav.affix-bottom {
   position: absolute;
-  top: auto;
   bottom: 270px;
 }

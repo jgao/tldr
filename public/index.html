@@ -10,7 +10,7 @@
 
   </head>
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar" data-affix-offset=>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
     <!-- Navbar
     ================================================== -->
@@ -30,39 +30,92 @@
     </div>
 
 
-  <div class="container">
+
+  <div class="modal bs-docs-sidebar">
+    <ul class="nav nav-list bs-docs-sidenav">
+      <li><a href="#select"><i class="icon-chevron-right"></i> Select</a></li>
+      <li><a href="#compile"><i class="icon-chevron-right"></i> Compile</a></li>
+      <li><a href="#summarize"><i class="icon-chevron-right"></i> Summarize</a></li>
+    </ul>
+  </div>
+  
 
     <!-- Docs nav
     ================================================== -->
-    <div class="row">
-
-      <div class="span9">
-
-
+  <div class="newscontainer">  
+    <div class="row-fluid">
+      <div class="span12">
         <section id="select">
+            <div class="modal" style="position: relative; z-index: 1">
+              <div class="modal-header">
+                <h3>Modal header</h3>
+              </div>
+              <div class="modal-body" data-toggle="buttons-radio">
+                <button type="button" class="btn btn-primary">Single Toggle</button>
+                <button type="button" class="btn btn-primary">Single Toggle</button>
+                <button type="button" class="btn btn-primary">Single Toggle</button>
+                <button type="button" class="btn btn-primary">Single Toggle</button>
+              </div>
+            </div>
         </section>
-
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row-fluid">
+      <h1>Try it out - 3 simple steps</h1>
+      <div class="span4">
+        <h2>Sources</h2>
+        <p>Select yo news sauces nigga </p>
+      </div>
+      <div class="span4">
+        <h2>Topics</h2>
+        <p>Select dat story that interest chu muthafucka </p>
+      </div>
+      <div class="span3">
+        <h2>Summary</h2>
+        <p>Select dat ratio by which we shrink yo dick </p>
+      </div>
+    </div>
+  </div>
+  <div class="newscontainer">
+    <div class="row">
         <section id="compile">
+          <div class="modal" style="position: relative; z-index: 1">
+              <div class="modal-header">
+                <h3>Modal header</h3>
+              </div>
+              <div class="modal-body">
+                <p>One fine body…</p>
+              </div>
+            </div>
         </section>
-
-        <section id="tryitout">
-          <h3>Try It Out - 3 simple steps</h3>
+        <section id="funnel">
+          <div class="modal" style="position: relative; z-index: 1">
+              <div class="modal-header">
+                <h3>Modal header</h3>
+              </div>
+              <div class="modal-body">
+                <p>One fine body…</p>
+              </div>
+            </div>
         </section>
-
-        <section id="compile">
-        </section>
-
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row-fluid">
+      <div class="span10">
         <section id="summarize">
-          <h1>Welcome to tl;dr</h1><h3>single article reduction</h3><p>In a town of 6,000, nearly everyone is affected.  They'd put out a blaze on the train shortly before it began rolling and crashed into town.  The lake from which the town takes its name glistens.  Some people in town had opposed it; others believed building a library would promote culture.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.05</p><p>sentences from article: 6/129</p><hr><h3>multiple article merge and reduction</h3><p>In a town of 6,000, nearly everyone is affected. Lac-Megantic's mayor has said she wants the tracks to be diverted away from downtown, to the local industrial park.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.025</p><p>sentences from article 1: 3/129</p><p>sentences from article 2: 1/55</p>
+          <h1>Welcome to tl;dr</h1><h3>single article reduction</h3><p>In a town of 6,000, nearly everyone is affected.  They'd put out a blaze on the train shortly before it began rolling and crashed into town.  The lake from which the town takes its name glistens.  Some people in town had opposed it; others believed building a library would promote culture.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.05</p><p>sentences from article: 6/129</p><hr><h3>multiple article merge and reduction</h3><p>In a town of 6,000, nearly everyone is affected. Lac-Megantic's mayor has said she wants the tracks to be diverted away from downtown, to the local industrial park.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.025</p><p>sentences from article 1: 3/129
+          </p><p>sentences from article 2: 1/55</p>
         </section>
       </div>
-      <div class="span3 bs-docs-sidebar affix-top">
-        <ul class="nav nav-list bs-docs-sidenav">
-          <li><a href="#select"><i class="icon-chevron-right"></i> Select</a></li>
-          <li><a href="#compile"><i class="icon-chevron-right"></i> Compile</a></li>
-          <li><a href="#summarize"><i class="icon-chevron-right"></i> Summarize</a></li>
-        </ul>
-      </div>
+    </div>
+  </div>
+
 
 
 
