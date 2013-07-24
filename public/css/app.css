@@ -29,7 +29,17 @@ body {
   width: 100%;
   height: 380px;
   padding: 20px 0;
-  background: url('../img/funnel.png') no-repeat center center;
+  background: url('../img/source.jpg') no-repeat center center;
+  background-size: cover; 
+
+}
+
+#summarize {
+  display: block;
+  width: 100%;
+  height: 380px;
+  padding: 20px 0;
+  background: url('../img/funnel.jpg') no-repeat center center;
   background-size: cover; 
 
 }

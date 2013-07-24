@@ -42,6 +42,9 @@
       })
     }
 
+    //Use .slider('getValue') to get the current conciseness index
+    $('#conciseness').slider()
+
     // tooltip demo
     $('.tooltip-demo').tooltip({
       selector: "a[data-toggle=tooltip]"

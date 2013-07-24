@@ -7,6 +7,7 @@
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
+    <link href="css/slider.css" rel="stylesheet">
 
   </head>
 
@@ -49,12 +50,12 @@
         <section id="signup">
             <div class="modal" style="position: relative; z-index: 1">
               <div class="modal-header">
-                <h3>Nigga Sign up Nigga</h3>
+                <h3>News. Neutral. Concise. Sign Up.</h3>
               </div>
               <div class="modal-body" data-toggle="buttons-radio">
                 <form class="form-inline">
                   <input type="text" class="input" placeholder="Email">
-                  <button type="submit" class="btn">Sign up</button>
+                  <button type="submit" class="btn btn-warning"><a href="#story">Sign up</a></button>
                 </form>
               </div>
             </div>
@@ -66,16 +67,16 @@
     <div class="row-fluid">
       <h1>Try it out - 3 simple steps</h1>
       <div class="span4">
-        <h2>Sources</h2>
-        <p>Select yo news sauces nigga </p>
+        <h2>Stories</h2>
+        <p> Stories you read </p>
       </div>
       <div class="span4">
-        <h2>Topics</h2>
-        <p>Select dat story that interest chu muthafucka </p>
+        <h2>Sources</h2>
+        <p> Sources you trust </p>
       </div>
       <div class="span3">
         <h2>Summary</h2>
-        <p>Select dat ratio by which we shrink yo dick </p>
+        <p> tldrness </p>
       </div>
     </div>
   </div>
@@ -87,10 +88,13 @@
                 <h3>Story</h3>
               </div>
               <div class="modal-body" data-toggle="buttons-radio">
-                <button type="button" class="btn btn-primary">Woman Has Baby</button>
-                <button type="button" class="btn btn-primary">Train Kills People</button>
-                <button type="button" class="btn btn-primary">Man Shows Dick On Internet</button>
-                <button type="button" class="btn btn-primary">China Shaking it Up</button>
+                <button type="button" class="btn btn-primary">Kate's Baby</button>
+                <button type="button" class="btn btn-primary">Train Disaster</button>
+                <button type="button" class="btn btn-primary">Weiner Scandal</button>
+                <button type="button" class="btn btn-primary">Earthquake in Gansu</button>
+              </div>
+              <div class="modal-footer">
+                <a href="#source" class="btn btn-warning">Done</a> 
               </div>
             </div>
         </section>
@@ -105,6 +109,19 @@
                 <button type="button" class="btn btn-primary" data-toggle="button">BBC</button>
               </div>
             </div>
+          </section>
+          <section id="summarize">
+            <div class="modal" style="position: relative; z-index: 1; margin-top:50px">
+              <div class="modal-header">
+                <h3>Summary</h3>
+              </div>
+              <div class="modal-body">
+                <input id="conciseness" type="text" class="span4" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="25" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide">
+              </div>
+              <div class="modal-footer">
+                <a href="#summarize" class="btn btn-warning">Done</a> 
+              </div>
+            </div>
         </section>
       </div>
     </div>
@@ -114,7 +131,7 @@
     ================================================== -->
     <div class="row-fluid">
       <div class="span10">
-        <section id="summarize">
+        <section id="article">
           <h1>Welcome to tl;dr</h1><h3>single article reduction</h3><p>In a town of 6,000, nearly everyone is affected.  They'd put out a blaze on the train shortly before it began rolling and crashed into town.  The lake from which the town takes its name glistens.  Some people in town had opposed it; others believed building a library would promote culture.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.05</p><p>sentences from article: 6/129</p><hr><h3>multiple article merge and reduction</h3><p>In a town of 6,000, nearly everyone is affected. Lac-Megantic's mayor has said she wants the tracks to be diverted away from downtown, to the local industrial park.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.025</p><p>sentences from article 1: 3/129
           </p><p>sentences from article 2: 1/55</p>
         </section>
@@ -131,5 +148,6 @@
     <script src="js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
   </body>
 </html>
