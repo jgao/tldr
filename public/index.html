@@ -32,7 +32,7 @@
 
 
 
-  <div class="modal bs-docs-sidebar">
+  <div class="bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav">
       <li><a href="#signup">Sign Up</a></li>
       <li><a href="#story">Story</a></li>
@@ -47,6 +47,8 @@
   <div class="newscontainer">  
     <div class="row-fluid">
       <div class="span12">
+        <section id="signup-bg" style="position:absolute">
+        </section>
         <section id="signup">
             <div class="modal" style="position: relative; z-index: 1">
               <div class="modal-header">
@@ -81,7 +83,9 @@
     </div>
   </div>
   <div class="newscontainer">
-    <div class="row">
+    <div class="row-fluid">
+        <section id="story-bg">
+        </section>
         <section id="story">
           <div class="modal" style="position: relative; z-index: 1">
               <div class="modal-header">
@@ -97,6 +101,8 @@
                 <a href="#source" class="btn btn-warning">Done</a> 
               </div>
             </div>
+        </section>
+        <section id="source-bg">
         </section>
         <section id="source">
           <div class="modal" style="position: relative; z-index: 1">
@@ -116,7 +122,7 @@
                 <h3>Summary</h3>
               </div>
               <div class="modal-body">
-                <input id="conciseness" type="text" class="span4" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="25" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide">
+                <input id="conciseness" type="text" class="span12" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="25" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
               </div>
               <div class="modal-footer">
                 <a href="#summarize" class="btn btn-warning">Done</a> 
