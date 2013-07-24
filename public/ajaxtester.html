@@ -1,0 +1,40 @@
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+	<script>
+	  $.ajax({
+	    url: "/summary",
+	    type: "GET",
+	    dataType: "json",
+	    data: {
+	    	// one of chineseearthquake, royalbaby, trainexplosion, weiner
+	    	story: "royalbaby",
+
+	    	// list of bbc, cnn, globeandmail, nationalpost
+	    	sources: ["cnn", "globeandmail", "nationalpost"],
+
+	    	// value from 0 - 1. Suggested to be at like 0.05 ish
+	    	conciseIndex: 0.025
+	    }, 
+	    contentType: "application/json",
+	    cache: false,
+	    timeout: 5000,
+	    complete: function() {
+	      //called when complete
+	      console.log('process complete');
+	    },
+
+	    success: function(data) {
+	      console.log(data);
+	      console.log('process sucess');
+	   },
+
+	    error: function() {
+	      console.log('process error');
+	    },
+	  });
+   </script>
+</body>
+</html>
