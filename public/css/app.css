@@ -45,7 +45,7 @@ body {
 #source-bg {
   position: absolute;
   width: 100%;
-  height: 480px;
+  height: 920px;
   padding: 20px 0;
   background: url('../img/source.jpg') no-repeat center center;
   background-size: cover; 
@@ -60,15 +60,17 @@ body {
 
 }
 
+
 #summarize {
   display: block;
   width: 100%;
   height: 480px;
   padding: 20px 0;
-  background: url('../img/funnel.jpg') no-repeat center center;
-  background-size: cover; 
+  //background: url('../img/funnel.jpg') no-repeat center center;
+  //background-size: cover; 
 
 }
+
 
 #signup .modal 
 {
