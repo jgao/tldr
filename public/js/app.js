@@ -36,6 +36,10 @@
       $(this).parents('.add-on')[method]('active')
     })
 
+    $('#topemailbutton').on('click', function() {
+      $('#tldrsidebar ul').children().first().remove() ;
+    })
+
     // add tipsies to grid for scaffolding
     if ($('#gridSystem').length) {
       $('#gridSystem').tooltip({
@@ -46,6 +50,11 @@
 
     //Use .slider('getValue') to get the current conciseness index
     $('#conciseness').slider()
+      .on('slide', function(ev){
+        $('#concisenessid').html(ev.value + "%")
+      }
+
+        )
 
     // tooltip demo
     $('.tooltip-demo').tooltip({

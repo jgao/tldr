@@ -7,7 +7,7 @@ body {
 #signup-bg {
   position: absolute;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
   background: url('../img/newspaper.jpg') no-repeat center center;
   background-size: cover; 
@@ -18,7 +18,7 @@ body {
 #signup {
   display: block;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
 
 }
@@ -27,7 +27,7 @@ body {
 #story-bg {
   position: absolute;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
   background: url('../img/world.jpg') no-repeat center center;
   background-size: cover; 
@@ -37,7 +37,7 @@ body {
 #story {
   display: block;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
 }
 
@@ -45,7 +45,7 @@ body {
 #source-bg {
   position: absolute;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
   background: url('../img/source.jpg') no-repeat center center;
   background-size: cover; 
@@ -55,7 +55,7 @@ body {
 #source {
   display: block;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
 
 }
@@ -63,7 +63,7 @@ body {
 #summarize {
   display: block;
   width: 100%;
-  height: 380px;
+  height: 480px;
   padding: 20px 0;
   background: url('../img/funnel.jpg') no-repeat center center;
   background-size: cover; 
