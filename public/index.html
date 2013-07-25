@@ -12,7 +12,6 @@
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
-
     <!-- Navbar
     ================================================== -->
 <div class="navbar navbar-fixed-top">
@@ -20,10 +19,13 @@
         <div class="container">
           <a class="brand" href="#">tl;dr</a>
           <div class="nav-collapse collapse pull-right">
-            <ul class="nav">
+            <!--<ul class="nav">
               <li><a href="#">Try</a></li>
               <li><a href="#">How?</a></li>
               <li><a href="#">About</a></li>
+            </ul>-->
+            <ul class="nav">
+              <li><a>Velocity Demo Day - Spring 2013</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -53,37 +55,42 @@
         <section id="signup">
             <div class="modal" style="position: relative; z-index: 1">
               <div class="modal-header">
-                <h3>News. Neutral. Concise. Sign Up.</h3>
+                <div class="larger">Reading the news shouldn't be hard.</div><br/>
+                Use tl;dr to save time and read more.<br/>
               </div>
               <div id="topemail" class="modal-body" data-toggle="buttons-radio">
+                <div style="margin-bottom:5px">Join us for the beta:</div>
                 <form class="form-inline">
                   <input id="topemailinput" type="text" class="input" placeholder="Email">
-                  <button id="topemailbutton" type="submit" class="btn btn-warning"><a href="#story">Sign up</a></button>
+                  <a style="margin-left:7px" id="topemailbutton" class="btn btn-info">Sign up</a>
                 </form>
               </div>
-              <div id="topemaildone">Thank you for your interest.</div>
+              <div id="topemaildone">Awesome! You will be notified of the beta release.</div>
             </div>
         </section>
       </div>
     </div>
   </div>
-  <div class="container">
+  <br/>
+  <div id="intro" class="container">
     <div class="row-fluid">
-      <h1>Try it out - 3 simple steps</h1>
-      <div class="span4">
-        <h2>Stories</h2>
-        <p> Stories you read </p>
-      </div>
-      <div class="span4">
-        <h2>Sources</h2>
-        <p> Sources you trust </p>
+      <div class="larger">Try It Out: 3 Simple Steps</div>
+      <br/><br/>
+      <div style="border-left-style:none" class="span3">
+        <div class="large">Stories</div>
+        <p>Search for the stories that you want to read about.</p>
       </div>
       <div class="span3">
-        <h2>Summary</h2>
-        <p> tl;dr </p>
+        <div class="large">Sources</div>
+        <p>Choose the news sources that you trust.</p>
+      </div>
+      <div class="span3">
+        <div class="large">Summarize</div>
+        <p>Select the compression rate of the news articles.</p>
       </div>
     </div>
   </div>
+  <br/>
   <div class="newscontainer">
     <div class="row-fluid">
         <section id="story-bg">
@@ -91,16 +98,22 @@
         <section id="story">
           <div class="modal" style="position: relative; z-index: 1">
               <div class="modal-header">
-                <h3>Story</h3>
+                <div class="larger">Today's Top Stories</div>
+                <div class="normal">Choose a story that you want to read about.</div>
               </div>
               <div class="modal-body" data-toggle="buttons-radio">
-                <button id="royalbaby" type="button" class="btn btn-primary">Kate's Baby</button>
-                <button id="trainexplosion" type="button" class="btn btn-primary">Train Disaster</button>
-                <button id="weiner" type="button" class="btn btn-primary">Weiner Scandal</button>
-                <button id="chineseearthquake" type="button" class="btn btn-primary">Earthquake in Gansu</button>
+                <center>
+                  <table>
+                    <tr>
+                      <td>
+                <button id="royalbaby" type="button" class="btn active">The British Royal Baby</button></td><td>&#09</td><td>
+                <button id="trainexplosion" type="button" class="btn">Quebec Train Derailment</button></td></tr><tr><td>
+                <button id="weiner" type="button" class="btn">Anthony Weiner Scandal</button></td><td>&#09</td><td>
+                <button id="chineseearthquake" type="button" class="btn">Aftermath of Earthquake in China</button></td></tr></table>
+              </center>
               </div>
               <div class="modal-footer">
-                <a href="#source" class="btn btn-warning">Done</a> 
+                <a href="#source" class="btn btn-info">Next</a> 
               </div>
             </div>
         </section>
@@ -109,15 +122,19 @@
         <section id="source">
           <div class="modal" style="position: relative; z-index: 1">
               <div class="modal-header">
-                <h3>Source</h3>
+                <div class="larger">News Source</div>
+                <div class="normal">Select some news sources that you trust.</div>
               </div>
               <div class="modal-body">
-                <button type="button" class="btn btn-primary" data-toggle="button">Globe and Mail</button>
-                <button type="button" class="btn btn-primary" data-toggle="button">National Post</button>
-                <button type="button" class="btn btn-primary" data-toggle="button">BBC</button>
+                <center>
+                <button id="bbc" type="button" class="btn active" data-toggle="button">BBC</button>
+                <button id="cnn" type="button" class="btn" data-toggle="button">CNN</button>
+                <button id="globeandmail" type="button" class="btn" data-toggle="button">Globe and Mail</button>
+                <button id="nationalpost" type="button" class="btn" data-toggle="button">National Post</button>
+              </center>
               </div>
               <div class="modal-footer">
-                <a href="#summarize" class="btn btn-warning">Done</a> 
+                <a href="#summarize" class="btn btn-info">Next</a> 
               </div>
             </div>
           </section>
@@ -126,37 +143,68 @@
           <section id="summarize">
             <div class="modal" style="position: relative; z-index: 1; margin-top:50px">
               <div class="modal-header">
-                <h3>Summary</h3>
+                <div class="larger">Summary</div>
+                <div class="normal">Set the slider to the compression rate you want.</div>
               </div>
               <div class="modal-body">
                 <div style="top:30px">
-                <input id="conciseness" type="text" class="span5" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
-                <span id="concisenessid">50%</span>
+                <input id="conciseness" type="text" class="span5" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="20" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+                <span id="concisenessid">20%</span>
               </div>
               </div>
               <div class="modal-footer">
-                <a href="#article" class="btn btn-warning">Done</a> 
+                <a id="gogoajax" href="#title" class="btn btn-info">Generate Article</a> 
               </div>
             </div>
         </section>
       </div>
     </div>
   </div>
+
+
+
   <div class="container">
     <!-- Docs nav
     ================================================== -->
     <div class="row-fluid">
-      <div class="span10">
-        <section id="article">
-          <h1>Welcome to tl;dr</h1><h3>single article reduction</h3><p>In a town of 6,000, nearly everyone is affected.  They'd put out a blaze on the train shortly before it began rolling and crashed into town.  The lake from which the town takes its name glistens.  Some people in town had opposed it; others believed building a library would promote culture.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.05</p><p>sentences from article: 6/129</p><hr><h3>multiple article merge and reduction</h3><p>In a town of 6,000, nearly everyone is affected. Lac-Megantic's mayor has said she wants the tracks to be diverted away from downtown, to the local industrial park.  Don't move oil through a town.  He said the investigation is continuing, but the company has suspended the train engineer. </p><p>conciseness index: 0.025</p><p>sentences from article 1: 3/129
-          </p><p>sentences from article 2: 1/55</p>
+      <div id="final" class="span10">
+        <section>
+          <div id="title" class="larger"></div>
+        </section>
+        <section>
+          <div id="article" class="smaller"></div>
         </section>
       </div>
     </div>
   </div>
 
 
+    <div class="newscontainer" style="margin-top:-150px">  
+    <div class="row-fluid">
+      <div class="span12">
+        <section id="signup-bg" style="position:absolute">
+        </section>
+        <section id="signup">
+            <div class="modal" style="position: relative; z-index: 1">
+              <div class="modal-header">
+                <div class="larger">Like what you see?</div><br/>
+                We believe tl;dr will change the way people read online.<br/>
+              </div>
+              <div id="botemail" class="modal-body" data-toggle="buttons-radio">
+                <div style="margin-bottom:5px">Join us for the beta:</div>
+                <form class="form-inline">
+                  <input id="botemailinput" type="text" class="input" placeholder="Email">
+                  <a style="margin-left:7px" id="botemailbutton" class="btn btn-info">Sign up</a>
+                </form>
+              </div>
+              <div id="botemaildone">Awesome! You will be notified of the beta release.</div>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
 
+<footer><center><p>© 2013 tl;dr ... The cake is a lie.</p><p>Feedback? <a href="mailto:info@readtldr.com">info@readtldr.com</a></center></footer>
 
     <!-- Le javascript
     ================================================== -->

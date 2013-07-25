@@ -1,63 +1,80 @@
+* {
+  font-family: "Open Sans", "Segoe UI", "helvetica";
+  color: #666666;
+  font-weight:lighter;
+}
+
 body {
   position: relative;
   padding-top: 40px;
 }
 
+.navbar-inner {
+  padding-top:10px;
+  height: 50px;
+}
 
 #signup-bg {
   position: absolute;
   width: 100%;
-  height: 480px;
+  margin-top:80px;
   padding: 20px 0;
   background: url('../img/newspaper.jpg') no-repeat center center;
   background-size: cover; 
-  opacity: 0.6; 
-
+  height: 300px;
+  opacity: 0.9; 
 }
 
 #signup {
   display: block;
   width: 100%;
-  height: 480px;
-  padding: 20px 0;
+  height: 300px;
+  padding-top: 120px;
+  padding-bottom:40px;
+  font-weight:50;
+  font-size:17px;
+}
 
+#intro {
+  font-size:17px;
+  width:70%;
+  margin-left:23%;
+  margin-bottom:70px;
 }
 
 
 #story-bg {
   position: absolute;
   width: 100%;
-  height: 480px;
+  height: 370px;
   padding: 20px 0;
   background: url('../img/world.jpg') no-repeat center center;
   background-size: cover; 
-  opacity: 0.6; 
+  opacity: 0.8; 
 }
 
 #story {
   display: block;
   width: 100%;
-  height: 480px;
-  padding: 20px 0;
+  height: 370px;
+  padding: 40px 0;
+  margin-bottom:-40px;
 }
-
 
 #source-bg {
   position: absolute;
   width: 100%;
   height: 920px;
-  padding: 20px 0;
   background: url('../img/source.jpg') no-repeat center center;
   background-size: cover; 
-  opacity: 0.6; 
+  opacity: 0.3; 
 }
 
 #source {
   display: block;
   width: 100%;
   height: 480px;
-  padding: 20px 0;
-
+  margin-top:140px;
 }
 
 
@@ -66,15 +83,28 @@ body {
   width: 100%;
   height: 480px;
   padding: 20px 0;
+  margin-top:-55px;
   //background: url('../img/funnel.jpg') no-repeat center center;
   //background-size: cover; 
 
 }
 
+#final {
+  width:50%;
+  margin-top:-50px;
+  margin-left:25%;
+  padding:15px;
+
+  display:none;
+
+  border-style:solid;
+  border-width:1px;
+  border-color:#BBBBBB;
+}
 
 #signup .modal 
 {
-  height: 100px;
+  height: 160px;
 }
 
 #story .modal,
@@ -83,7 +113,55 @@ body {
   height: 200px;
 }
 
+.large {
+  font-size:20px;
+  color: #555577;
+  margin-bottom:20px;
+}
 
+.larger {
+  font-size: 20px;
+  font-weight: normal;
+  color: #222277;
+  height:20px;
+}
+
+.span3 {
+  padding-left:38px;
+border-left-style:solid;
+border-width: 1px;
+border-color:#AAAAAA;
+}
+
+.modal {
+  padding:10px;
+}
+
+#topemaildone {
+  padding:15px;
+  margin-top:10px;
+}
+#botemaildone {
+  padding:15px;
+  margin-top:10px;
+}
+
+tr {
+  cellpadding: 5px;
+}
+
+
+.normal{
+  margin-top:10px;
+  font-weight:50;
+  font-size:17px;
+}
+
+.smaller{
+  margin-top:10px;
+  font-weight:0;
+  font-size:15px;
+}
 
 /* Sidenav for Docs
 -------------------------------------------------- */
@@ -154,3 +232,8 @@ body {
   position: absolute;
   bottom: 270px;
 }
+
+#concisenessid {
+  margin-left: 10px;
+}
+

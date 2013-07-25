@@ -9,7 +9,8 @@
 
     var $window = $(window)
 
-    var story = "none";
+    var story = "royalbaby";
+    var sources = ["bbc"];
 
     // Disable certain links in docs
     $('section [href^=#]').click(function (e) {
@@ -52,9 +53,7 @@
     $('#conciseness').slider()
       .on('slide', function(ev){
         $('#concisenessid').html(ev.value + "%")
-      }
-
-        )
+      })
 
     // tooltip demo
     $('.tooltip-demo').tooltip({
@@ -128,7 +127,34 @@
        },
 
         error: function() {
-          console.log('process error');
+          console.log('email error');
+        },
+      });
+    });
+    $("#botemaildone").hide();
+
+    $('#botemailbutton').on('click', function(e){
+      $("#botemail").hide();
+      $("#botemaildone").show();
+      var useremail = $("#botemailinput").val();
+      $.ajax({
+        url: "/email",
+        type: "GET",
+        dataType: "json",
+        data: {
+          email: useremail
+        }, 
+        contentType: "application/json",
+        cache: false,
+        timeout: 5000,
+        complete: function() {
+        },
+
+        success: function(data) {
+       },
+
+        error: function() {
+          console.log('email error');
         },
       });
     });
@@ -145,6 +171,84 @@
     $('#chineseearthquake').on('click', function(e){
       story = "chineseearthquake";
     });
+
+    $('#bbc').on('click', function(e){
+      var sIndex = $.inArray("bbc", sources);
+      if(sIndex >= 0) {
+        sources.splice(sIndex, 1);
+      }
+      else{
+        sources.push("bbc");
+      }
+      console.log(sources);
+    });
+    $('#cnn').on('click', function(e){
+      var sIndex = $.inArray("cnn", sources);
+      if(sIndex >= 0) {
+        sources.splice(sIndex, 1);
+      }
+      else{
+        sources.push("cnn");
+      }
+      console.log(sources);
+    });
+    $('#globeandmail').on('click', function(e){
+      var sIndex = $.inArray("globeandmail", sources);
+      if(sIndex >= 0) {
+        sources.splice(sIndex, 1);
+      }
+      else{
+        sources.push("globeandmail");
+      }
+      console.log(sources);
+    });
+    $('#nationalpost').on('click', function(e){
+      var sIndex = $.inArray("nationalpost", sources);
+      if(sIndex >= 0) {
+        sources.splice(sIndex, 1);
+      }
+      else{
+        sources.push("nationalpost");
+      }
+      console.log(sources);
+    });
+
+    $('#gogoajax').on('click', function(e){
+      var cIndex = $('#conciseness').slider().data('slider').getValue()
+      $.ajax({
+        url: "/summary",
+        type: "GET",
+        dataType: "json",
+        data: {
+          // one of chineseearthquake, royalbaby, trainexplosion, weiner
+          story: story,
+
+          // list of bbc, cnn, globeandmail, nationalpost
+          sources: sources,
+
+          // value from 0 - 1. Suggested to be at like 0.05 ish
+          conciseIndex: cIndex/(100.0 * sources.length)
+        }, 
+        contentType: "application/json",
+        cache: false,
+        timeout: 5000,
+        complete: function() {
+        },
+
+        success: function(data) {
+          $("#final").show();
+          $("#title").html(data.title);
+          $("#article").html(data.summary);
+       },
+
+        error: function() {
+          console.log('ajax error');
+        },
+      });
+
+    });
+
+
 
     // request built javascript
     $('.download-btn .btn').on('click', function () {
