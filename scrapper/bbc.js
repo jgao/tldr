@@ -3,7 +3,7 @@ var cheerio = require("cheerio");
 var fs = require("fs");
 
 request({
-  uri: "http://www.bbc.com/autos/story/20130731-filthy-lucra",
+  uri: "http://www.bbc.co.uk/news/world-us-canada-23534845",
 }, function(error, response, body) {
   var $ = cheerio.load(body);
   var filename = "index.txt"
