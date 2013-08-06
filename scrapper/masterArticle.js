@@ -11,7 +11,7 @@ var fs = require("fs");
     //console.log(j);
     var myfile = j.toString()+".txt";
     //console.log(myfile);
-    fs.open(myfile, "w");
+    fs.open("Articles/"+myfile, "w");
     request({
       
       uri: array[j],
@@ -23,7 +23,7 @@ var fs = require("fs");
         //console.log(myfile);
         var paragraph = $(this);
         var text = paragraph.text();
-        fs.appendFile(myfile, text, function (err) {});
+        fs.appendFile("Articles/"+myfile, text, function (err) {});
       });
     k++;
     });
