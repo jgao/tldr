@@ -5,7 +5,7 @@ var fs = require("fs");
   var myhref = "new";
   var oldhref = "old";
   var i = 0;
-  fs.open("TORSTARtemp.txt", "w");
+  fs.open("temp.txt", "w");
   request({
     uri: "http://www.thestar.com/",
   }, function(error, response, body) {
@@ -19,7 +19,7 @@ var fs = require("fs");
       {
         oldhref = myhref;
         //myhref = "http://www.thestar.com"+myhref;
-        fs.appendFile("temp.txt", myhref, function (err) {});
+        fs.appendFile("TORSTARtemp.txt", myhref, function (err) {});
         //console.log(myfile);
         console.log(myhref);
         i++;
