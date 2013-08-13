@@ -5,23 +5,23 @@ var fs = require("fs");
   var myhref = "new";
   var oldhref = "old";
   var i = 0;
-  fs.open("temp.txt", "w");
+  fs.open("TORSTARtemp.txt", "w");
   request({
-    uri: "http://www.cnn.com/",
+    uri: "http://www.thestar.com/",
   }, function(error, response, body) {
     var $ = cheerio.load(body);
-    $("div #cnn_maincntnr .cnn_contentarea div div div div ul ul li a").each(function(i) {
+    $("div div div div div div div div div div div div a").each(function(i) {
       myhref = $(this).attr("href")+"\n";
-      //console.log(myhref);
+      console.log(myhref);
       /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
       {*/
-      if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+      if (myhref.substring(0,6) !== "/video")
       {
         oldhref = myhref;
-        myhref = "http://www.cnn.com"+myhref;
+        //myhref = "http://www.thestar.com"+myhref;
         fs.appendFile("temp.txt", myhref, function (err) {});
         //console.log(myfile);
-        //console.log(myhref);
+        console.log(myhref);
         i++;
       }
     });

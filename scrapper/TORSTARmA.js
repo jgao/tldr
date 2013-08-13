@@ -11,19 +11,19 @@ var fs = require("fs");
     //console.log(j);
     var myfile = j.toString()+".txt";
     //console.log(myfile);
-    fs.open("Articles/"+myfile, "w");
+    fs.open("Articles/TORSTAR/TORSTAR_"+myfile, "w");
     request({
       
       uri: array[j],
     }, function(error, response, body) {
       var $ = cheerio.load(body);
-      $("#cnnContainer .cnn_maincntnr .cnn_contentarea .cnn_storyarea .cnn_strycntntlft p").each(function(j) {
+      $(".article-story-body .body .text p").each(function(j) {
         //console.log(j);
         myfile = k.toString()+".txt";
         //console.log(myfile);
         var paragraph = $(this);
         var text = paragraph.text();
-        fs.appendFile("Articles/"+myfile, text, function (err) {});
+        fs.appendFile("Articles/TORSTAR/TORSTAR_"+myfile, text, function (err) {});
       });
     k++;
     });
