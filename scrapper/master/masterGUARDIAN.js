@@ -4,9 +4,9 @@ var fs = require("fs");
 
 var todo = 0;
 //////////////////////////
-///This is for WASHINGTON/
+/////This is for GURADIAN/
 //////////////////////////
-	function getURLwashington()
+	function getURLguardian()
 	{
 	  var array = [];
 	  var myhref = "new";
@@ -15,55 +15,52 @@ var todo = 0;
 	  
 	  todo++;
 	  request({
-		uri: "http://www.washingtonpost.com/",
+		uri: "http://www.theguardian.com/uk",
 	  }, function(error, response, body) {
 		var $ = cheerio.load(body);
 		var tarray = array;
 		var ttodo = $("body a").length;
-        console.log(ttodo);
+        //console.log(ttodo);
 		$("body a").each(function(i) {
 		  ttodo--;
-		  myhref = $(this).attr("href");
-		  //console.log(myhref.substring(0,1));
+		  myhref = $(this).attr("href")+"\n";
+		  console.log(myhref.substring(12,16));
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-          if (myhref !== undefined){
-		  if (myhref.substring(0,1) === "/" && myhref.substring(0,7) !== "/posttv" && oldhref !== myhref)
+          if(myhref !== undefined){
+		  if (myhref.substring(12,16) === "theg")
 		  {
 			oldhref = myhref;
-			myhref = "http://www.washingtonpost.com"+myhref;
 			tarray.push(myhref);
 			//console.log(myfile);
-			//console.log(myhref);
+			console.log(myhref);
 			i++;
-		  }}
+		  }
+          }
 			//console.log(ttodo);
 			if(ttodo == 0){
-			  //console.log("im here 1");
+			  //console.log("im here");
 			  todo--;
-              //console.log(todo);
 			  if(todo == 0){
-				getArticlewashington(tarray);
-                //console.log("im here 4");
+				getArticleguardian(tarray);
 			  }
 			}
 		});
 	  });
 	}
 	  
-	function getArticlewashington(array){
-      //console.log("i made it");
+	function getArticleguardian(array){
 	  var j = 0;
 	  var filedescriptor = [];
-	  console.log(array);
+	  //console.log(array);
 	  while (j<array.length-1)
 	  {
 		var tmyfile = j.toString()+".txt";
-		fd = fs.openSync("Articles/WASHINGTON/WASHINGTON_"+tmyfile, "w");
+		fd = fs.openSync("Articles/GUARDIAN/GUARDIAN_"+tmyfile, "w");
 		fs.closeSync(fd);
 		//console.log(myfile);
 		request({
-		  uri: array[j] + "?&tldrj=" + j,
+		  uri: array[j] + "&tldrj=" + j,
 		}, function(error, response, body) {
 		
 		  var $ = cheerio.load(body);
@@ -74,47 +71,45 @@ var todo = 0;
 		  if(!pathname) return;
 		  
 		  var k = pathname.substring(pathname.indexOf("tldrj=") + 6);
-		  
+		  console.log(k);
 		  
 		  k = parseInt(k);
-          //console.log(k);
 		
 		//console.log(j);
 		var myfile = k.toString()+".txt";
-		//console.log(array[k]);
+		//console.log(array[j]);
 		//console.log(filedescriptor);
-		fs.appendFile("Articles/WASHINGTON/WASHINGTON_"+myfile, array[k]+"\n", function (err) {});
+		fs.appendFile("Articles/GUARDIAN/GUARDIAN_"+myfile, array[k]+"\n", function (err) {});
 	
-		  //console.log("hey");
-		  /*$("div div div div div img").each(function(element) {
+		  
+		  $("#content #atricle-wrapper #main-content-picture img").each(function(element) {
 			//console.log(myfile);
 			var paragraph = $(this);
 			var text = paragraph.attr("src")+"\n";
 			//console.log(text);
-			fs.appendFile("Articles/WASHINGTON/WASHINGTON_"+myfile, text, function (err) {});
-		  });*/
-		  $("#content #article-leaf-page div h1 .entry-title").each(function(element) {
-			//console.log(myfile);
-			var paragraph = $(this);
-			var text = paragraph.text()+"\n";
-			console.log(text);
-			fs.appendFile("Articles/WASHINGTON/WASHINGTON_"+myfile, text, function (err) {});
+			fs.appendFile("Articles/GUARDIAN/GUARDIAN_"+myfile, text, function (err) {});
 		  });
-          $("#content #article-leaf-page div div h3 span").each(function(element) {
+		  $("#article-header #main-article-info h1").each(function(element) {
 			//console.log(myfile);
 			var paragraph = $(this);
 			var text = paragraph.text()+"\n";
 			//console.log(text);
-			fs.appendFile("Articles/WASHINGTON/WASHINGTON_"+myfile, text, function (err) {});
+			fs.appendFile("Articles/GUARDIAN/GUARDIAN_"+myfile, text, function (err) {});
 		  });
-		  $("#content #article-leaf-page div #article #article_body div article p").each(function(element) {
+		  $("#content ul li").each(function(element) {
+			//console.log(myfile);
+			var paragraph = $(this);
+			var text = paragraph.text()+"\n";
+			fs.appendFile("Articles/GUARDIAN/GUARDIAN_"+myfile, text, function (err) {});
+		  });
+		  $("#content #article-wrapper #article-body-blocks p").each(function(element) {
 			//console.log(myfile);
 			var paragraph = $(this);
 			var text = "\n"+paragraph.text()+"\n";
-			fs.appendFile("Articles/WASHINGTON/WASHINGTON_"+myfile, text, function (err) {});
+			fs.appendFile("Articles/GUARDIAN/GUARDIAN_"+myfile, text, function (err) {});
 		  });
 		});
 		j++;
 	  }
 	}
-	getURLwashington();
+	getURLguardian();

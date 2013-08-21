@@ -26,7 +26,8 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+          if(myhref !== undefined){
+		  if (myhref.substring(0,1) === '/' && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.bbc.co.uk"+myhref;
@@ -34,7 +35,7 @@ var todo = 0;
 			//console.log(myfile);
 			//console.log(myhref);
 			i++;
-		  }
+		  }}
 			//console.log(ttodo);
 			if(ttodo == 0){
 			  console.log("im here 1");

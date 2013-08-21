@@ -26,7 +26,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video"&& oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -59,7 +59,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -92,7 +92,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -125,7 +125,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -159,7 +159,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -192,7 +192,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -225,7 +225,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -258,7 +258,7 @@ var todo = 0;
 		  //console.log(myhref);
 		  /*if (myhref.substring(0,4) !== 'http' && myhref.substring(0,6) !== '/video' && myhref !== oldhref && myhref !== '')
 		  {*/
-		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video")
+		  if (myhref.substring(0,1) === '/' && myhref.substring(0,6) !== "/video" && oldhref !== myhref)
 		  {
 			oldhref = myhref;
 			myhref = "http://www.cnn.com"+myhref;
@@ -342,5 +342,5 @@ var todo = 0;
 		});
 		j++;
 	  }
-	}
-	getURLcnn();
+	}	
+getURLcnn();
