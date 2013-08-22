@@ -1,0 +1,66 @@
+body {
+  position: relative;
+  padding-top: 60px;
+}
+
+.row .news-item {
+	height: 140px;
+	margin-bottom: 20px;
+}
+
+.palette-green-sea:hover,
+.palette-green-sea.clicked {
+  background-color: #1abc9c;
+}
+
+.palette-nephritis:hover,
+.palette-nephritis.clicked {
+  background-color: #2ecc71;
+}
+
+.palette-belize-hole:hover,
+.palette-belize-hole.clicked {
+  background-color: #3498db;
+}
+
+.palette-wisteria:hover,
+.palette-wisteria.clicked {
+  background-color: #9b59b6;
+}
+
+.palette-midnight-blue:hover,
+.palette-midnight-blue.clicked {
+  background-color: #34495e;
+}
+
+.palette-orange:hover, 
+.palette-orange.clicked {
+  background-color: #f1c40f;
+}
+
+.palette-pumpkin:hover,
+.palette-pumpkin.clicked {
+  background-color: #e67e22;
+}
+
+.palette-pomegranate:hover,
+.palette-pomegranate.clicked {
+  background-color: #e74c3c;
+}
+
+.palette-silver:hover,
+.palette-silver.clicked {
+  background-color: #ecf0f1;
+  color: #bdc3c7;
+}
+
+.palette-silver:hover .palette,
+.palette-silver.clicked .palette{
+  color: #bdc3c7;
+}
+
+.palette-asbestos:hover,
+.palette-asbestos.clicked {
+  background-color: #95a5a6;
+}
+
