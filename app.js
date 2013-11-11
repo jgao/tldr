@@ -33,6 +33,13 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 app.get('/summary', summarizer.summarize);
 app.get('/email', signup.withEmail)
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+if ('production' == app.get('env')){
+  http.createServer(app).listen(80, "162.209.88.214" ,function(){
+    console.log('Express server listening at 162.209.88.214 on port 80 not' + app.get('port'));
+  });
+}
+else{
+  http.createServer(app).listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'));
+  });
+}
